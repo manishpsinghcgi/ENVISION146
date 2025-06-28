@@ -1,0 +1,69 @@
+quiet: true
+compact: true
+skip-check:
+  - CKV_AWS_2 # LOW Ensure ALB protocol is HTTPS
+  - CKV_AWS_18 # NO Ensure the S3 bucket has access logging enabled
+  - CKV_AWS_65  # NO Ensure container insights are enabled on ECS cluster
+  - CKV_AWS_21 # LOW Ensure the S3 bucket has versioning enabled
+  - CKV_AWS_23 # LOW Ensure every security groups rule has a description
+  - CKV_AWS_33 # LOW Ensure KMS key policy does not contain wildcard (*) principal
+  - CKV_AWS_50 # NO X-ray tracing is enabled for Lambda
+  - CKV_AWS_51 # NO Ensure ECR Image Tags are immutable
+  - CKV_AWS_79 # NO Ensure Instance Metadata Service Version 1 is not enabled
+  - CKV_AWS_84 # LOW Ensure Elasticsearch Domain Logging is enabled
+  - CKV_AWS_91 # NO Ensure the ELBv2 (Application/Network) has access logging enabled
+  - CKV_AWS_108 # LOW Ensure IAM policies does not allow data exfiltration
+  - CKV_AWS_109 # LOW Ensure IAM policies does not allow permissions management without constraints
+  - CKV_AWS_111 # LOW Ensure IAM policies does not allow write access without constraints
+  - CKV_AWS_116 # NO Ensure that AWS Lambda function is configured for a Dead Letter Queue(DLQ)
+  - CKV_AWS_117 # NO Ensure that AWS Lambda function is configured inside a VPC
+  - CKV_AWS_118 # NO Ensure that enhanced monitoring is enabled for Amazon RDS instances
+  - CKV_AWS_126 # NO Ensure that detailed monitoring is enabled for EC2 instances
+  - CKV_AWS_136 # LOW Ensure that ECR repositories are encrypted using KMS
+  - CKV_AWS_144 # NO Ensure that S3 bucket has cross-region replication enabled
+  - CKV_AWS_145 # LOW Ensure that S3 buckets are encrypted with KMS by default
+  - CKV_AWS_158 # NO Ensure that CloudWatch Log Group is encrypted by KMS
+  - CKV_AWS_161 # LOW Ensure RDS database has IAM authentication enabled
+  - CKV_AWS_173 # LOW Check encryption settings for Lambda environmental variable
+  - CKV_AWS_191 # LOW Ensure Elasticache replication group is encrypted by KMS using a customer managed Key (CMK)
+  - CKV_AWS_209 # LOW Ensure MQ broker encrypted by KMS using a customer managed Key (CMK)
+  - CKV_AWS_247 # LOW Ensure all data stored in the Elasticsearch is encrypted with a CMK
+  - CKV_AWS_272 # NO Ensure AWS Lambda function is configured to validate code-signing
+  - CKV_AWS_286 # LOW Ensure IAM policies does not allow privilege escalation
+  - CKV_AWS_288 # LOW Ensure IAM policies does not allow data exfiltration
+  - CKV_AWS_289 # LOW Ensure IAM policies does not allow permissions management / resource exposure without constraints
+  - CKV_AWS_290 # LOW Ensure IAM policies does not allow write access without constraints
+  - CKV_AWS_310 # LOW Ensure CloudFront distributions should have origin failover configured
+  - CKV_AWS_300 # LOW Lifecycle for aborting failed uploads
+  - CKV_AWS_315 # LOW Ensure EC2 Auto Scaling groups use EC2 launch templates
+  - CKV_AWS_336 # LOW Ensure ECS containers are limited to read-only access to root filesystems
+  - CKV_AWS_337 # NO Ensure SSM parameters are using KMS CMK
+  - CKV_AWS_338 # NO Ensure CloudWatch log groups retains logs for at least 1 year
+  - CKV_AWS_356 # LOW Ensure no IAM policies documents allow “*” as a statement’s resource for restrictable actions
+  - CKV2_AWS_23 # NO Route53 A Record has Attached Resource
+  - CKV2_AWS_30 # NO Ensure Postgres RDS as aws_db_instance has Query Logging enabled
+  - CKV2_AWS_32 # LOW Ensure CloudFront distribution has a response headers policy attached
+  - CKV2_AWS_34 # LOW AWS SSM Parameter should be Encrypted
+  - CKV2_AWS_38 # LOW Ensure Domain Name System Security Extensions (DNSSEC) signing is enabled for Amazon Route 53 public hosted zones
+  - CKV2_AWS_39 # NO Ensure Domain Name System (DNS) query logging is enabled for Amazon Route 53 hosted zones
+  - CKV2_AWS_46 # LOW Ensure AWS Cloudfront Distribution with S3 have Origin Access set to enabled
+  - CKV2_AWS_52 # LOW Ensure AWS ElasticSearch/OpenSearch Fine-grained access control is enabled
+  - CKV2_AWS_59 # NO Ensure ElasticSearch/OpenSearch has dedicated master node enabled
+  - CKV2_AWS_61 # LOW Ensure that an S3 bucket has a lifecycle configuration
+  - CKV2_AWS_62 # NO Ensure S3 buckets should have event notifications enabled
+  - CKV_GIT_6 # NO Ensure GitHub branch protection rules requires signed commits
+  - CKV2_GHA_1 # NO Ensure top-level permissions are not set to write-all
+  - CKV_TF_1 # NO Ensure Terraform module sources use a commit hash
+  - CKV_AWS_184 # NO Ensure resource is encrypted by KMS using a customer managed Key (CMK)
+  - CKV_AWS_260 # LOW Ensure no security groups allow ingress from 0.0.0.0:0 to port 80
+  - CKV_AWS_317 # LOW Ensure Elasticsearch Domain Audit Logging is enabled
+  - CKV_AWS_354 # NO Ensure RDS Performance Insights are encrypted using KMS CMKs
+  - CKV_DOCKER_2 # LOW Ensure that HEALTHCHECK instructions have been added to container images
+  - CKV_GIT_5 # NO GitHub pull requests should require at least 2 approvals
+  - CKV2_AWS_11 # NO Ensure VPC flow logging is enabled in all VPCs
+  - CKV2_AWS_16 # NO Ensure that Auto Scaling is enabled on your DynamoDB tables
+  - CKV2_AWS_57 # NO Ensure Secrets Manager secrets should have automatic rotation enabled
+  - CKV_AWS_166 # NO Ensure Backup Vault is encrypted at rest using KMS CMK
+  - CKV2_AWS_18   # NO Ensure that Elastic File System (Amazon EFS) file systems are added in the backup plans of AWS Backup
+  - CKV_AWS_378 # LOW Ensure AWS Load Balancer doesn't use HTTP protocol
+  
